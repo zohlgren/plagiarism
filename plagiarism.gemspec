@@ -1,6 +1,6 @@
 Gem::Specification.new do |gem|
   gem.name        = 'plagiarism'
-  gem.version     = '0.1.0'
+  gem.version     = '0.1.1'
   gem.summary     = "A Ruby wrapper for the Copyscape Premium API"
   gem.description = "Search for plagiarism and check your content for originality with Copyscape"
   gem.homepage    = "https://github.com/zohlgren/plagiarism"
