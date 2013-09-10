@@ -1,16 +1,19 @@
 module Plagiarism
-  class TextSearch < Request
+  class TextSearch < Search
 
     def initialize(search_text, options = {})
       validate_text(search_text)
-      options = {encoding: "UTF-8"}.merge(options)
-      send(:post, request_params(options).merge(t: search_text)
+      params = {e: "UTF-8", t: search_text}.merge(search_params(options))
+      @request = Request.new(:post, params)
+      @response = @request.response
     end
+
 
   private
 
+
     def validate_text(text)
-      raise "Invalid search text" if text.class != String || text.nil? || text.eql? ""
+      raise "Invalid search text" if text.class != String || text.nil? || text == ""
     end
 
   end

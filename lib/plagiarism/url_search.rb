@@ -1,12 +1,16 @@
 module Plagiarism
-  class URLSearch < Request
+  class URLSearch < Search
 
     def initialize(search_url, options = {})
       validate_url(search_url)
-      send(:get, request_params(options).merge(q: search_url))
+      params = search_params(options).merge(q: search_url)
+      @request = Request.new(:get, params)
+      @response = @request.response
     end
 
+
   private
+
 
     def validate_url(url)
       uri = URI.parse URI.encode(url)
