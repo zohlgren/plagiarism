@@ -11,8 +11,6 @@ Plagiarism is a Ruby wrapper for the Copyscape (http://copyscape.com) Premium AP
 
     gem install plagiarism
 
-    require 'plagiarism'
-
 
 Once you have your Copyscape username and API key you'll need to configure them.
 
