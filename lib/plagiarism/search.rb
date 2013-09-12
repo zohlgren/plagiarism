@@ -41,9 +41,8 @@ module Plagiarism
     # Return the number of words matched from the source
     #
     def words_matched
-      if @response.success?
-        percentage = @response.doc.css("allwordsmatched").text
-        percentage != "" ? percentage.to_i : nil
+      if @response.success? && words = @response.doc.css("allwordsmatched").text
+        words != "" ? words.to_i : nil
       else
         nil
       end
@@ -53,8 +52,7 @@ module Plagiarism
     # Return the percentage of words matched from the source
     #
     def percentage_matched
-      if @response.success?
-        percentage = @response.doc.css("allpercentmatched").text
+      if @response.success? && percentage = @response.doc.css("allpercentmatched").text
         percentage != "" ? percentage.to_i : nil
       else
         nil
