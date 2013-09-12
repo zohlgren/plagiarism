@@ -6,16 +6,18 @@ module Plagiarism
 
     base_uri "http://www.copyscape.com/api"
 
-    attr_accessor :response, :params
+    attr_accessor :response, :raw_response, :params
 
     def initialize(method, options = {})
       @params = build_params(options)
       if method.eql? :get
-        @response = Response.new self.class.get('/', query: @params)
+        @raw_response = self.class.get('/', query: @params)
+        @response = Response.new(@raw_response)
       elsif method.eql? :post
-        @response = Response.new self.class.post('/', body: @params)
+        @raw_response = self.class.post('/', body: @params)
+        @response = Response.new(@raw_response)
       else
-        raise "Invalid HTTP request method"
+        raise "Invalid or missing HTTP request method"
       end
     end
 

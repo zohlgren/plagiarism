@@ -14,7 +14,7 @@ module Plagiarism
 
     def validate_url(url)
       uri = URI.parse URI.encode(url)
-      raise "Please provide a valid search URL" unless uri.scheme && uri.host && uri.path
+      raise "Please provide a valid search URL." unless uri.scheme && uri.host && uri.path
     end
 
   end

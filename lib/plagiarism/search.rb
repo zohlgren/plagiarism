@@ -10,6 +10,7 @@ module Plagiarism
       @response.success? ? @response.doc.css("count").text.to_i : nil
     end
 
+
     # Return true if any results were found
     #
     def results?
@@ -24,6 +25,7 @@ module Plagiarism
 
 
     # Return true if the search request was successful
+    #
     def success?
       @response && @response.success? ? true : false
     end
@@ -33,6 +35,20 @@ module Plagiarism
     #
     def words
       @response.success? ? @response.doc.css("querywords").text.to_i : nil
+    end
+
+
+    # Return the number of words matched from the source
+    #
+    def words_matched
+      @response.success? ? @response.doc.css("allwordsmatched").text.to_i : nil
+    end
+
+
+    # Return the percentage of words matched from the source
+    #
+    def percentage_matched
+      @response.success? ? @response.doc.css("allpercentmatched").text.to_i : nil
     end
 
 
@@ -55,7 +71,7 @@ module Plagiarism
         o: operation_for_scope(options[:scope]),
         c: options[:full_comparisons] || 0
       }
-      params.merge(e: options[:encoding]) if self.class == TextSearch
+      params.merge!(e: options[:encoding]) if options[:encoding] && self.class == TextSearch
       params
     end
 
@@ -63,9 +79,9 @@ module Plagiarism
     # Map search scope to an api operation
     #
     def operation_for_scope(scope)
-      if scope == "full"
+      if scope && scope.to_sym == :full
         "cpsearch"
-      elsif scope == "private"
+      elsif scope && scope.to_sym == :private
         "psearch"
       else
         "csearch"

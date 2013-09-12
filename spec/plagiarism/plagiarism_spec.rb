@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe Plagiarism do
 
+describe Plagiarism do
 
 
 end

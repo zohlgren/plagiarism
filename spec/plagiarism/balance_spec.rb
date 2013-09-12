@@ -3,22 +3,8 @@ require 'spec_helper'
 describe Plagiarism::Balance do
 
   before do
-    Plagiarism.configure do |config|
-      config.username = "COPYSCAPE_USERNAME"
-      config.api_key = "COPYSCAPE_API_KEY"
-    end
-  end
-
-
-  it "requires a Copyscape username" do
-    Plagiarism.username = nil
-    expect { Plagiarism::Balance.amount }.to raise_error
-  end
-
-
-  it "requires a Copyscape API key" do
-    Plagiarism.api_key = nil
-    expect { Plagiarism::Balance.amount }.to raise_error
+    Plagiarism.username = "USERNAME"
+    Plagiarism.api_key = "API_KEY"
   end
 
 
