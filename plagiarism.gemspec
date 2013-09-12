@@ -1,6 +1,6 @@
 Gem::Specification.new do |gem|
   gem.name        = 'plagiarism'
-  gem.version     = '0.1.1'
+  gem.version     = '0.1.2'
   gem.summary     = "A Ruby wrapper for the Copyscape Premium API"
   gem.description = "Search for plagiarism and check your content for originality with Copyscape"
   gem.homepage    = "https://github.com/zohlgren/plagiarism"
@@ -11,7 +11,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'httparty'
   gem.add_dependency 'nokogiri'
   gem.add_dependency 'money'
-  gem.add_development_dependency "rake"
+  gem.add_development_dependency 'rake'
   gem.add_development_dependency 'rspec-core'
   gem.add_development_dependency 'vcr'
   gem.add_development_dependency 'excon', '>= 0.22.0'
