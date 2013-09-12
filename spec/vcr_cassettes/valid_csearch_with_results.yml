@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://www.copyscape.com/api/
+    body:
+      encoding: UTF-8
+      string: u=USERNAME&k=API_KEY&f=xml&e=UTF-8&t=When%20in%20the%20Course%20of%20human%20events%2C%20it%20becomes%20necessary%20for%20one%20people%20to%20dissolve&o=csearch&c=3
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 12 Sep 2013 20:28:52 GMT
+      Server:
+      - Apache/1.3.27 (Unix)  (Red-Hat/Linux) FrontPage/5.0.2.2623 mod_python/2.7.8
+        Python/1.5.2 mod_ssl/2.8.12 OpenSSL/0.9.6b DAV/1.0.3 PHP/4.3.7 mod_perl/1.26
+        mod_webapp/1.2.0-dev
+      X-Powered-By:
+      - PHP/4.3.7
+      Set-Cookie:
+      - ck=22YGG5ZG0I0FY8480COSOG4WS; expires=Sat, 12-Sep-2015 20:28:52 GMT; path=/;
+        domain=.copyscape.com
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/xml; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<response>\n\t<error>Username
+        or API key not correct</error>\n</response>\n"
+    http_version: 
+  recorded_at: Thu, 12 Sep 2013 20:28:53 GMT
+recorded_with: VCR 2.5.0

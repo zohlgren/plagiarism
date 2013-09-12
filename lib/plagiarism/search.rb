@@ -41,25 +41,31 @@ module Plagiarism
     # Return the number of words matched from the source
     #
     def words_matched
-      @response.success? ? @response.doc.css("allwordsmatched").text.to_i : nil
+      if @response.success?
+        percentage = @response.doc.css("allwordsmatched").text
+        percentage != "" ? percentage.to_i : nil
+      else
+        nil
+      end
     end
 
 
     # Return the percentage of words matched from the source
     #
     def percentage_matched
-      @response.success? ? @response.doc.css("allpercentmatched").text.to_i : nil
+      if @response.success?
+        percentage = @response.doc.css("allpercentmatched").text
+        percentage != "" ? percentage.to_i : nil
+      else
+        nil
+      end
     end
 
 
     # Return the URL for viewing results
     #
     def results_url
-      if @response.success? && viewing_url = @response.doc.css("allviewurl").text
-        viewing_url != "" ? viewing_url : nil
-      else
-        nil
-      end
+      @response.doc.css("allviewurl").text if results?
     end
 
 

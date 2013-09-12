@@ -1,0 +1,37 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://www.copyscape.com/api/
+    body:
+      encoding: UTF-8
+      string: u=USERNAME&k=API_KEY&f=xml&e=UTF-8&t=Nonclosely%20decani%20unspaced%20guardlike%20unporcelainized%20prewire%20russki%20achaian%0A%20%20%20%20%20%20mecisteus%20nontemporariness%20tumuli%20creepfed%20subsimian%20hoopoe%20muddler%20wels%20contraste&o=csearch&c=0
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 12 Sep 2013 20:46:27 GMT
+      Server:
+      - Apache/1.3.27 (Unix)  (Red-Hat/Linux) FrontPage/5.0.2.2623 mod_python/2.7.8
+        Python/1.5.2 mod_ssl/2.8.12 OpenSSL/0.9.6b DAV/1.0.3 PHP/4.3.7 mod_perl/1.26
+        mod_webapp/1.2.0-dev
+      X-Powered-By:
+      - PHP/4.3.7
+      Set-Cookie:
+      - ck=ANZD6SGXPKTVOKC8G40008O0W; expires=Sat, 12-Sep-2015 20:46:32 GMT; path=/;
+        domain=.copyscape.com
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/xml; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<response>\n\t<querywords>17</querywords>\n\t<count>0</count>\n\t<allviewurl>http://view.copyscape.com/search/q0ish5kygr</allviewurl>\n</response>\n"
+    http_version:
+  recorded_at: Thu, 12 Sep 2013 20:46:33 GMT
+recorded_with: VCR 2.5.0
