@@ -1,12 +1,15 @@
+
+![Build Status](https://api.travis-ci.org/zohlgren/plagiarism.png) &nbsp;
+![Code Climate](https://codeclimate.com/github/zohlgren/plagiarism.png)
+
+
+
 ## Plagiarism
 
 Search for plagiarism and check the originality of your content with Copyscape.
 
 Plagiarism is a Ruby wrapper for the Copyscape (http://copyscape.com) Premium API.
 
-
-![Build Status](https://api.travis-ci.org/zohlgren/plagiarism.png)
-![Code Climate](https://codeclimate.com/github/zohlgren/plagiarism.png)
 
 
 ### Getting Started
