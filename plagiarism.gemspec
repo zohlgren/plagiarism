@@ -11,6 +11,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'httparty'
   gem.add_dependency 'nokogiri'
   gem.add_dependency 'money'
+  gem.add_development_dependency "rake"
   gem.add_development_dependency 'rspec-core'
   gem.add_development_dependency 'vcr'
   gem.add_development_dependency 'excon', '>= 0.22.0'
