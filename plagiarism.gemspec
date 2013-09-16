@@ -16,6 +16,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'vcr'
   gem.add_development_dependency 'excon', '>= 0.22.0'
   gem.add_development_dependency 'webmock', '< 1.12.0'
+  gem.add_development_dependency 'coveralls'
 
 
   gem.files = `git ls-files`.split("\n")
