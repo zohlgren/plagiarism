@@ -1,6 +1,7 @@
 
 ![Build Status](https://api.travis-ci.org/zohlgren/plagiarism.png) &nbsp;
-![Code Climate](https://codeclimate.com/github/zohlgren/plagiarism.png)
+![Code Climate](https://codeclimate.com/github/zohlgren/plagiarism.png) &nbsp;
+![Coverage Status](https://coveralls.io/repos/zohlgren/plagiarism/badge.png?branch=master)
 
 
 
