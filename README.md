@@ -36,18 +36,37 @@ http://www.copyscape.com/example.html.
 
 ##### Check a URL for plagiarism
 
-    search = Plagiarism.url_seach("http://example.com")
+    search = Plagiarism.url_search("http://example.com")
 
-    if search.results? # => true
+    # Was the request successful?
+    search.success? # => true
 
-      # How many results were found?
-      search.count # => 324
+    # Were any results found?
+    search.results? # => true
 
-      # Wow! That's a lot of results. Let's take a look...
-      search.results_url # => "http://view.copyscape.com/search/hm2yx3g9kg"
+    # Return the number results found
+    search.count # => 324
 
-    end
+    # Return the number of words checked
+    search.words # => 1340
 
+    # Return the Copyscape results URL
+    search.results_url # => "http://view.copyscape.com/search/hm2yx3g9kg"
+
+When using the <em>full_comparisons</em> option with a value >= 3 you get the following
+extra result information:
+
+    # Search with full comparisons (must be between 0 and 10)
+    search = Plagiarism.url_search("http://example.com", full_comparisons: 3)
+
+    # Was the request successful?
+    search.success? # => true
+
+    # Return the number of words matched from the source
+    search.words_matched # => 1323
+
+    # Return the percentage of words matched from the source
+    search.percentage_matched # => 98
 
 
 ##### Check some text for plagiarism
@@ -56,17 +75,22 @@ http://www.copyscape.com/example.html.
     excerpt = "When in the course of human events, it becomes necessary
       for one people to dissolve the political bands"
 
-    search = Plagiarism.text_seach(excerpt)
+    search = Plagiarism.text_search(excerpt)
 
-    if search.results? # => true
+    # Was the request successful?
+    search.success? # => true
 
-      # How many results were found?
-      search.count # => 324
+    # Were any results found?
+    search.results? # => true
 
-      # Wow! That's a lot of results. Let's take a look...
-      search.results_url # => "http://view.copyscape.com/search/hm2yx3g9kg"
+    # Return the number results found
+    search.count # => 324
 
-    end
+    # Return the number of words checked
+    search.words # => 1340
+
+    # Return the Copyscape results URL
+    search.results_url # => "http://view.copyscape.com/search/hm2yx3g9kg"
 
 
 
